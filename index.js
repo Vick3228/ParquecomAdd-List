@@ -50,13 +50,14 @@ app.get('/dinossauro/del/:id',  async(req, res) => {
     res.render("dinossauro/lst",{dinossauros});
 })
 
-
 app.post('/dinossauro/upd/:id',  async (req, res) => {
   const {id, nome,periodo} = req.body
   await Dinossauro.findByIdAndUpdate(id,{nome,periodo})
   const dinossauros = await Dinossauro.find()
  res.render("dinossauro/lst", {dinossauros});
 })
+
+
 
 //paleontologo
 app.get('/paleontologo', async (req, res) => {
@@ -85,13 +86,14 @@ app.get('/paleontologo/del/:id',  async(req, res) => {
     res.render("paleontologo/lst",{paleontologos});
 })
 
-
 app.post('/paleontologo/upd/:id',  async (req, res) => {
   const {id, nome,periodo} = req.body
   await Paleontologo.findByIdAndUpdate(id,{nome,periodo})
   const paleontologos = await Paleontologo.find()
  res.render("paleontologo/lst", {paleontologos});
 })
+
+
 
 //especie
 app.get('/especie',  async (req, res) => {
@@ -111,8 +113,6 @@ app.post('/especie/add',  async (req, res) => {
   res.render("especie/add");
 })
 
-
-
 //update e delete - especie
 app.get('/especie/upd/:id',  async(req, res) => {
   //buscar o registro que quero alterar
@@ -125,7 +125,6 @@ app.get('/especie/del/:id',  async(req, res) => {
   const especies = await Especie.find()
     res.render("especie/lst",{especies});
 })
-
 
 app.post('/especie/upd/:id',  async (req, res) => {
   const {id, nome,periodo} = req.body
