@@ -51,8 +51,8 @@ app.get('/dinossauro/del/:id',  async(req, res) => {
 })
 
 app.post('/dinossauro/upd/:id',  async (req, res) => {
-  const {id, nome,especie,peso,altura,anodesc,dieta} = req.body
-  await Dinossauro.findByIdAndUpdate(id,{nome,especie,peso,altura,anodesc,dieta})
+  const {id, nome,especie,peso,altura,anodesc,dieta,descricao} = req.body
+  await Dinossauro.findByIdAndUpdate(id,{nome,especie,peso,altura,anodesc,dieta,descricao})
   const dinossauros = await Dinossauro.find()
  res.render("dinossauro/lst", {dinossauros});
 })
@@ -87,8 +87,8 @@ app.get('/paleontologo/del/:id',  async(req, res) => {
 })
 
 app.post('/paleontologo/upd/:id',  async (req, res) => {
-  const {id, nome,periodo} = req.body
-  await Paleontologo.findByIdAndUpdate(id,{nome,periodo})
+  const {nome, nascimento, descoberta} = req.body
+  await Paleontologo.findByIdAndUpdate(req.params.id, {nome, nascimento, descoberta})
   const paleontologos = await Paleontologo.find()
  res.render("paleontologo/lst", {paleontologos});
 })
