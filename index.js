@@ -46,13 +46,12 @@ app.get('/dinossauro/upd/:id',  async(req, res) => {
 
 app.get('/dinossauro/del/:id',  async(req, res) => {
     await Dinossauro.findByIdAndDelete(req.params.id)
-  const dinossauros = await Dinossauro.find()
     res.render("dinossauro/lst",{dinossauros});
 })
 
 app.post('/dinossauro/upd/:id',  async (req, res) => {
-  const {id, nome,periodo} = req.body
-  await Dinossauro.findByIdAndUpdate(id,{nome,periodo})
+  const {id, nome,especie,peso,altura,anodesc,dieta} = req.body
+  await Dinossauro.findByIdAndUpdate(id,{nome,especie,peso,altura,anodesc,dieta})
   const dinossauros = await Dinossauro.find()
  res.render("dinossauro/lst", {dinossauros});
 })
