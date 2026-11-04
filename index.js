@@ -46,6 +46,7 @@ app.get('/dinossauro/upd/:id',  async(req, res) => {
 
 app.get('/dinossauro/del/:id',  async(req, res) => {
     await Dinossauro.findByIdAndDelete(req.params.id)
+    const dinossauros = await Dinossauro.find()
     res.render("dinossauro/lst",{dinossauros});
 })
 
