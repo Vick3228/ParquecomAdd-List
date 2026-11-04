@@ -4,7 +4,7 @@ const DinossauroSchema = new conexao.Schema({
   especie: {type: String,required: true},
   peso:{type:Number, required:false},
   altura:{type:Number, required:false},
-  anoDescoberta:{type:Number, required:false},
+  anodesc:{type:Number, required:false},
   dieta:{type:String,required:false},
   descricao:{type:String,required:false}
 
