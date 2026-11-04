@@ -15,6 +15,9 @@
                 <td>
                     <h3>Descoberta</h3>
                 </td>
+                <td>
+                    <h3>Ação</h3>
+                </td>
             </tr>
             <%paleontologos.forEach(paleontologos=>{%>
                 <tr>
@@ -26,6 +29,10 @@
                     </td>
                     <td>
                         <%=paleontologos.descoberta%>
+                    </td>
+                    <td>
+                        <a href="/paleontologo/upd/<%=paleontologos.id%>">✏️</a>
+                        <a href="/paleontologo/del/<%=paleontologos.id%>">🗑️</a>
                     </td>
                 </tr>
                 <%})%>
